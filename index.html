@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,150 +8,103 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #ffe4e1;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
             text-align: center;
+            overflow-x: hidden;
         }
-
-        .flower-decor {
-            position: fixed;
-            font-size: 40px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Контейнер */
+        .flower { position: fixed; font-size: 40px; z-index: 0; }
         .container {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7);
             padding: 30px;
             border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            max-width: 450px;
             width: 90%;
             z-index: 10;
-            position: relative;
         }
-
-        img {
+        .cat-img {
+            width: 100%;
             max-width: 250px;
             border-radius: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
-
-        h1 {
-            color: #d63384;
-            margin-bottom: 25px;
-        }
-
-        p {
-            color: #555;
-            line-height: 1.6;
-            font-size: 18px;
-        }
-
-        .buttons {
+        h1 { color: #d63384; font-size: 22px; }
+        p { color: #333; font-size: 16px; line-height: 1.6; }
+        .btn-group {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
-            flex-wrap: wrap;
+            min-height: 100px;
         }
-
         button {
             padding: 12px 25px;
             font-size: 18px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
-
-        #yesBtn {
-            background-color: #ff69b4;
-            color: white;
-        }
-
-        #noBtn {
-            background-color: #ccc;
-            color: white;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .final-text {
-            font-weight: bold;
-            color: #d63384;
-            margin-top: 20px;
-        }
-
+        #yesBtn { background-color: #ff69b4; color: white; transition: 0.2s; }
+        #noBtn { background-color: #ccc; color: white; }
+        .hidden { display: none; }
         .tg-link {
             display: inline-block;
-            margin-top: 25px;
+            margin-top: 20px;
             color: #0088cc;
             text-decoration: none;
             font-weight: bold;
         }
     </style>
 </head>
-
 <body>
 
-    <div class="flower-decor" style="top: 10%; left: 5%;">🌸</div>
-    <div class="flower-decor" style="bottom: 10%; left: 8%;">🌷</div>
-    <div class="flower-decor" style="top: 15%; right: 5%;">🌺</div>
-    <div class="flower-decor" style="bottom: 15%; right: 8%;">🌹</div>
+    <div class="flower" style="top: 5%; left: 5%;">🌸</div>
+    <div class="flower" style="bottom: 5%; right: 5%;">🌹</div>
 
     <div id="page1" class="container">
-        <img src="https://i.pinimg.com/originals/74/24/34/742434524f20ec6852f689f213961803.gif" alt="Котик с цветком">
+        <img src="cat.jpg" class="cat-img" alt="Котик 1">
         <h1>Хочешь получить поздравление?</h1>
-        <div class="buttons">
+        <div class="btn-group">
             <button id="yesBtn">Да</button>
             <button id="noBtn">Нет</button>
         </div>
     </div>
 
     <div id="page2" class="container hidden">
-        <img src="https://media.tenor.com/7p4rEw0fUv8AAAAM/cute-cat-love.gif" alt="Милый котик">
+        <img src="cat1.jpg" class="cat-img" alt="Котик 2">
         <h1>С 8 марта, любимая моя!</h1>
-        <p>Еще раз с праздником, мое ты солнышко. Я тебя очень люблю и ценю как девушку. Ты для меня больше, чем просто
-            человек. Может мы и ссоримся, но это один из этапов который мы должны пройти вместе и потом надеюсь будет
-            уже лучше. Но пока хочу сказать, что я люблю тебя очень сильно. Спасибо за то, что остаешься со мной. Люблю,
-            целую и обнимаю. С праздником!</p>
-        <p class="final-text">Если хочешь получить подарок то напиши мне в тг.</p>
+        <p>Еще раз с праздником, мое ты солнышко. Я тебя очень люблю и ценю как девушку. Ты для меня больше, чем просто человек. Может мы и ссоримся, но это один из этапов который мы должны пройти вместе и потом надеюсь будет уже лучше. Но пока хочу сказать, что я люблю тебя очень сильно. Спасибо за то, что остаешься со мной. Люблю, целую и обнимаю. С праздником!</p>
+        <p style="color: #d63384; font-weight: bold;">Если хочешь получить подарок то напиши мне в тг.</p>
         <a href="https://t.me/fraxnikax" class="tg-link">Написать в Telegram 💌</a>
     </div>
 
     <script>
-        const yesBtn = document.getElementById('yesBtn');
-        const noBtn = document.getElementById('noBtn');
-        const page1 = document.getElementById('page1');
-        const page2 = document.getElementById('page2');
+        var yesBtn = document.getElementById('yesBtn');
+        var noBtn = document.getElementById('noBtn');
+        var page1 = document.getElementById('page1');
+        var page2 = document.getElementById('page2');
+        var currentScale = 1;
 
-        let yesScale = 1;
-        noBtn.addEventListener('click', () => {
-            yesScale += 0.5;
-            yesBtn.style.transform = `scale(${yesScale})`;
-
-            if (yesScale > 5) {
-                noBtn.style.opacity = "0";
-                noBtn.style.pointerEvents = "none";
+        noBtn.onclick = function() {
+            currentScale += 0.5;
+            // Используем обычное сложение строк, чтобы VS Code не ругался
+            yesBtn.style.transform = "scale(" + currentScale + ")";
+            
+            if (currentScale > 5) {
+                noBtn.style.display = "none";
             }
-        });
+        };
 
-        // Логика кнопки "Да"
-        yesBtn.addEventListener('click', () => {
+        yesBtn.onclick = function() {
             page1.classList.add('hidden');
             page2.classList.remove('hidden');
-        });
+        };
     </script>
 </body>
-
 </html>
